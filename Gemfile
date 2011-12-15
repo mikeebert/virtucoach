@@ -7,6 +7,13 @@ gem 'rails', '3.1.2'
 
 gem 'sqlite3'
 
+group :development do
+  gem "rspec-rails", "2.7.0" 
+end
+
+group :test do
+  gem "rspec", "2.7.0"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,7 +26,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'

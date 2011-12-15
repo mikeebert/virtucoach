@@ -2,6 +2,67 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require reset
  *= require_self
  *= require_tree . 
 */
+
+@import 'styles';
+
+/* GLOBAL */
+
+.action {
+	padding: 5px 0 0 0;
+}
+
+body {
+  font-family: Helvetica;
+  margin: 5px auto 10px auto;
+  width: 960px;
+}
+
+#clear {
+	clear: both;
+}
+
+#container {
+  padding: 10px;
+}
+
+em {
+	font-style: italic;
+}
+
+.field {
+	padding-left: 5px;	
+}
+
+#notice {
+	background-color: #bee9fd;
+	border-radius: 5px;
+	padding: 10px;
+	font-style: italic;
+}
+
+p {
+	padding: 7px 0;
+}
+
+img {
+	border: 2px solid #ccc;
+	padding: 2px;
+	margin: 5px;
+	float: left;
+	border-radius: 5px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+h1 {
+	text-align: left;	
+	line-height: 30px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
