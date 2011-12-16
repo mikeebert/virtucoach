@@ -8,25 +8,36 @@
 */
 
 @import 'styles';
+@import 'workouts';
+@import 'comments';
 
 /* GLOBAL */
 
+html {
+	background: #f8f8f8;
+}
 .action {
 	padding: 5px 0 0 0;
 }
 
 body {
-  font-family: Helvetica;
-  margin: 5px auto 10px auto;
-  width: 960px;
+
 }
 
-#clear {
+.clear {
 	clear: both;
 }
 
 #container {
-  padding: 10px;
+  font-family: Helvetica;
+  margin: 0px auto 10px auto;
+  width: 960px;
+  background-color: white;
+  padding: 0px 0 5px 0;
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+
 }
 
 em {
@@ -42,6 +53,7 @@ em {
 	border-radius: 5px;
 	padding: 10px;
 	font-style: italic;
+	margin: 0 5px 0 5px;
 }
 
 p {
@@ -66,3 +78,4 @@ h1 {
 	font-weight: bold;
 	padding-bottom: 5px;
 }
+

@@ -1,0 +1,51 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>Whoops! There were <%= pluralize(@user.errors.count, "error") %> creating your account:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<table>
+  <%= form_for(@user) do |f| %>
+    <tr>
+      <td>First Name:</td>
+      <td class="field"><%= f.text_field :first_name, placeholder: "First" %></td>
+    </tr>
+    <tr>
+      <td>Last Name:</td>
+      <td class="field"><%= f.text_field :last_name, placeholder: "Last" %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td class="field"><%= f.text_field :email, placeholder: "joe@example.com" %></td>
+    </tr>
+    <tr>
+      <td>Street Address:</td>
+      <td class="field"><%= f.text_field :address, placeholder: "123 Sesame St" %></td>
+    </tr>
+    <tr>
+      <td>City:</td>
+      <td class="field"><%= f.text_field :city, placeholder: "City" %></td>
+    </tr>
+    <tr>
+      <td>State:</td>
+      <td class="field"><%= f.text_field :state, placeholder: "ST" %></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td class="field"><%= f.password_field :password, placeholder: "Enter your password"  %></td>
+    </tr>
+    <tr>
+      <td>Confirm Password:</td>
+      <td class="field"><%= f.password_field :password_confirmation, placeholder: "Confirm password" %></td>
+    </tr>
+    <tr>
+      <td class="action"><%= f.submit "Submit" %></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>

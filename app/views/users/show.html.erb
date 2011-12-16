@@ -1,0 +1,42 @@
+<div id="user_show">
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+
+  <table>
+    <tr>
+      <td>Email: </td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td>Address: </td>
+      <td>
+        <% if @user.address.present? %>
+          <%= @user.address %>
+        <% else %>
+          <em>none</em>
+        <% end %>    
+      </td>    
+    </tr>
+    <tr>
+      <td>City: </td>
+      <td>
+        <% if @user.city.present? %>
+          <%= @user.city %>
+        <% else %>
+          <em>none</em>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>State: </td>
+      <td>
+        <% if @user.state.present? %>
+          <%= @user.state %>
+        <% else %>
+          <em>none</em>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+  
+  <p><%= link_to "Edit My Account or Change My Password", edit_user_url(@user) %></p>
+</div>

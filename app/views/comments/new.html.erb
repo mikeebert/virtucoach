@@ -1,0 +1,8 @@
+<h1>Leave comment for <%= @workout.name %> on <%= @workout.date.strftime("%a %m/%e") %></h1>
+
+<%= form_for(@comment) do |f| %>
+  <%= f.text_area :note, :size => "20x10"   %>
+  <%= f.hidden_field :workout_id %>
+  <p><%= f.submit %></p>
+<% end %>
+

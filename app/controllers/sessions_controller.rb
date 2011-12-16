@@ -1,7 +1,13 @@
 class SessionsController < ApplicationController
   
+  before_filter :logged_in?
+  
   def new
-    @user = User.new
+    if logged_in?
+      redirect_to workouts_url
+    else
+      @user = User.new
+    end
   end
   
   def create

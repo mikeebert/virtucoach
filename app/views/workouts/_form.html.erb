@@ -1,0 +1,21 @@
+<% if @workout.errors.any? %>
+  <div id="error_explanation">
+    <h2>Whoops! <%= pluralize(@workout.errors.count, "error") %> prevented us from saving your workout:</h2>
+    <ul>
+    <% @workout.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@workout) do |f| %>
+  <p>Date: <%= f.date_select :date, :order => [:day, :month, :year] %></p>
+  <p>Workout Name: <%= f.text_field :name %></p>
+  <p>Description: (use option-return for line breaks)</p>
+  <p><%= f.text_area :description, :size => "20x10" %><br />
+     Completed?: <%= f.check_box :complete %></p>
+  <p>Duration (in mins): <%= f.number_field :duration  %></p>
+  <p>RPE: <%= f.select :RPE, options_for_select([["0",0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9", 9], ["10",10]]) %></p>
+  <%= f.submit "Save" %>
+<% end %>

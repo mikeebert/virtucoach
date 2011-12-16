@@ -3,7 +3,8 @@ Virtucoach::Application.routes.draw do
   resource :sessions
   resources :users
   resources :workouts
+  resources :comments
   
-  root to: "workouts#index"
+  root to: "sessions#new"
 
 end

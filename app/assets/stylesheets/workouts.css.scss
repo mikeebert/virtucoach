@@ -1,0 +1,165 @@
+
+/* WORKOUT CALENDAR */
+
+#calendar table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#calendar td,
+#calendar th {
+  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-size: 10px;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+#calendar th {
+  background: #DDD;
+  color: #666;
+  text-align: center;
+  width: 14.2857142857143%;
+}
+
+#calendar td {
+  background: #FFF;
+  color: black;
+  height: 85px;
+  vertical-align: top;
+  font-size: 12px;
+  padding-left: 2px;
+}
+
+#calendar a {
+	text-decoration: none;	
+}
+
+#calendar .notmonth {
+  color: #CCC;
+}
+
+#calendar #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#calendar #month a, #calendar #month a:hover {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #999;
+}
+
+#calendar .today {
+  background-color: #D7F2FF;
+}
+
+#calendar td p.name {
+	margin: 1px ;
+}
+
+#calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+#calendar li {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+
+/* WORKOUT LIST TABLE */
+
+#new_workout_link {
+	font-size: smaller;
+	padding: 10px 0 0px 10px;
+}
+
+#workout_table {
+	float: left;
+	margin-left: 10px;
+}
+
+#workouts_list {
+	font-size: 12px;
+	margin: 0px 10px 10px 0px;
+	th {
+		padding-left: 2px;
+		text-align: left;
+		font-weight: bold;
+		line-height: 16px;
+		vertical-align: bottom;
+	}
+	.data_header {
+		text-align: center;
+	}
+	tr {
+		height: 20px;
+	}
+}
+
+#workouts_list td {
+		padding: 2px 1px 3px 1px;
+		border-bottom: 1px solid #aaa;
+		vertical-align: bottom;
+		
+		.name {
+			width:  100px;
+		}
+		.description {
+			width: 225px;
+		}
+
+}
+
+#workouts_list td a {
+	text-decoration: none;
+}
+
+#workouts_list td.date {	
+			width: 70px;
+			font-size: 12px;
+		}
+
+#workouts_list td.data {
+	width: 30px;
+	text-align: center;
+}
+
+#workouts_list td.comment a {
+	text-decoration: none;
+	text-size:smaller;
+	padding: 0px;
+	font-style: italic;
+}
+
+/*#comment_btn {
+	border: 1px solid;
+	border-radius: 4px;
+	color: black;
+	cursor: pointer;
+	&:hover, &:focus, &:active {
+	  border: 1px solid darken(black, 25%);
+	  color: #fff;
+	  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.41);
+	}
+}*/
+
+/* WORKOUT SHOW */
+
+.delete_workout a {
+	text-decoration: none;
+	color: blue;
+}
+
+.edit_workout a {
+	text-decoration: none;
+	color: blue;
+}

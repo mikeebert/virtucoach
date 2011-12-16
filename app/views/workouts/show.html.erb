@@ -1,0 +1,16 @@
+<div id="title">
+  <h1>Workout for <%= @workout.date.strftime("%A, %b %d") %></h1>
+</div>
+  
+<div id="workout_show">
+  <p><strong>Name:</strong> <%= @workout.name %></p>
+  <p><strong>Description:</strong> <%= @workout.description %></p>
+  <p><strong>Miles:</strong> <%= @workout.miles %></p>
+  <p><strong>Duration:</strong><%= @workout.duration %></p>
+  <p><strong>RPE:</strong> <%= @workout.RPE %></p>
+
+  <p><strong>Complete?</strong> <%= @workout.complete %></p>
+
+  <p class="edit_workout"><%= link_to "Edit", edit_workout_url(@workout) %> | <%= link_to "Delete", workout_url(@workout), method: :delete, confirm: "Are you sure?" %></p>
+  <!-- (:false => "No", :true => "Yes") -->
+</div>

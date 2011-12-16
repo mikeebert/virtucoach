@@ -1,0 +1,20 @@
+<table id ="workouts_list">
+  <th>Date</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th class="data_header">Time (mins)</th>
+  <th class="data_header">RPE</th>
+  <th class="data_header"></th>
+
+  <% @workouts.each do |workout| %>
+    <tr>
+      <td class="date"><%= workout.date.strftime("%a %m/%e") %></td>
+      <td class="name"><%= link_to workout.name, workout_url(workout)  %></td>
+      <td class="description"><%= truncate(workout.description, length: 40, omission: "...") %></td>
+      <td class="data"><%= workout.duration %></td>
+      <td class="data"><%= workout.RPE %></td>
+      <td class="comment"><%= link_to "comment", new_comment_url(:workout_id => workout.id), method: :get, id: "comment_btn" %></td>
+    </tr> 
+  <% end %>
+
+</table> 

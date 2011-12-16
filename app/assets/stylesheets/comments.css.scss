@@ -1,0 +1,43 @@
+/* COMMENTS TABLE */
+
+#comments {
+	width:250px;
+	float: right;
+	margin: 40px 20px 10px;
+} 
+
+#comments li#comment_cell {
+	background-color: #bdf6ff;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(189, 246, 255)), to(rgb(179, 233, 242)));
+	background-image: -webkit-linear-gradient(top, rgb(189, 246, 255), rgb(179, 233, 242));
+	background-image: -moz-linear-gradient(top, rgb(189, 246, 255), rgb(179, 233, 242));
+	background-image: -o-linear-gradient(top, rgb(189, 246, 255), rgb(179, 233, 242));
+	background-image: -ms-linear-gradient(top, rgb(189, 246, 255), rgb(179, 233, 242));
+	background-image: linear-gradient(top, rgb(189, 246, 255), rgb(179, 233, 242));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bdf6ff', EndColorStr='#b3e9f2');	
+	border-radius: 5px;
+	padding: 4px;
+	margin-bottom: 5px;
+}
+.comment_workout {
+	font-size: 11px;
+	font-weight: bold;
+	a {
+		color: black;
+	}
+}
+
+.comment_note {
+	color: #2f2d2d;
+	font-style: italic;
+	font-size: 12px;
+	padding-left: 2px;
+}
+
+.comment_user {
+	color: #4d4a4a;
+	text-align: right;
+	padding: 0 5px 5px 0;
+	font-size: 12px; 
+}
+

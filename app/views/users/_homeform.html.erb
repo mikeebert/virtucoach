@@ -1,0 +1,21 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>Whoops! There were <%= pluralize(@user.errors.count, "error") %> creating your account:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<ul>
+  <%= form_for(@user) do |f| %>
+    <li>First Name: <%= f.text_field :first_name, placeholder: "First" %></li>
+    <li>Last Name: <%= f.text_field :last_name, placeholder: "Last" %></li>
+    <li>Email: <%= f.text_field :email, placeholder: "Joe@example.com" %></li>
+    <li>Password: <%= f.password_field :password, placeholder: "Password"  %></li>
+    <li>Confirm Password: <%= f.password_field :password_confirmation, placeholder: "Re-enter your password" %></li>
+    <div id="new_account"><%= f.submit "Submit" %></p>
+  <% end %>
+</ul>
