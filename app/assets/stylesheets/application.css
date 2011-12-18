@@ -37,6 +37,7 @@ body {
   border-left: 1px solid #bbb;
   border-right: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
+  height: 725px;
 
 }
 
@@ -51,9 +52,9 @@ em {
 #notice {
 	background-color: #bee9fd;
 	border-radius: 5px;
-	padding: 10px;
+	padding: 5px;
 	font-style: italic;
-	margin: 0 5px 0 5px;
+	margin: 10px;
 }
 
 p {
@@ -79,3 +80,11 @@ h1 {
 	padding-bottom: 5px;
 }
 
+h2 {
+	width: 650px;
+	text-align: center;
+	margin-top: 10px;
+	font-weight: bold;
+
+	
+}

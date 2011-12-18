@@ -1,9 +1,43 @@
+/* View Links */
+
+#navigation_links {
+	width: 660px;
+	margin-left: 17px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#view_link {
+	li {
+		font-size: smaller;
+		float: left;
+		padding-right: 5px;
+	}
+}
+
+#month {
+	width: 460px;
+	text-align:center;
+	float: left;
+	a {
+		text-decoration: none;
+	}
+}
+
+#new_workout_link {
+	font-size: smaller;
+	float: right;
+}
 
 /* WORKOUT CALENDAR */
 
+#calendar {
+}
+
 #calendar table {
   border-collapse: collapse;
-  width: 100%;
+  width: 660px;
+  margin-left: 5px;
   margin-bottom: 20px;
 }
 
@@ -25,7 +59,7 @@
 #calendar td {
   background: #FFF;
   color: black;
-  height: 85px;
+  height: 105px;
   vertical-align: top;
   font-size: 12px;
   padding-left: 2px;
@@ -74,12 +108,17 @@
   text-align: center;
 }
 
+#comment_link {
+	text-align: right;
+	font-style: italic;
+	font-size: 10px;
+	bottom: 1px;
+}
 
 /* WORKOUT LIST TABLE */
 
-#new_workout_link {
-	font-size: smaller;
-	padding: 10px 0 0px 10px;
+#list {
+	display: none;
 }
 
 #workout_table {
@@ -88,6 +127,7 @@
 }
 
 #workouts_list {
+	width: 650px;
 	font-size: 12px;
 	margin: 0px 10px 10px 0px;
 	th {
@@ -103,6 +143,9 @@
 	tr {
 		height: 20px;
 	}
+	tr.today {
+		background-color: #dcf1fc;
+	}
 }
 
 #workouts_list td {
@@ -116,7 +159,6 @@
 		.description {
 			width: 225px;
 		}
-
 }
 
 #workouts_list td a {
@@ -145,6 +187,7 @@
 	border-radius: 4px;
 	color: black;
 	cursor: pointer;
+	font-size: 10px;
 	&:hover, &:focus, &:active {
 	  border: 1px solid darken(black, 25%);
 	  color: #fff;
@@ -154,6 +197,12 @@
 
 /* WORKOUT SHOW */
 
+#workout_show {
+	width: 650px;
+	margin: 10px;	
+	float: left;
+}
+
 .delete_workout a {
 	text-decoration: none;
 	color: blue;
@@ -162,4 +211,10 @@
 .edit_workout a {
 	text-decoration: none;
 	color: blue;
+}
+
+/* WORKOUT FORM */
+
+#workout_form {
+	margin: 10px;
 }

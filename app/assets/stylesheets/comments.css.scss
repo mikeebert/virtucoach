@@ -1,10 +1,19 @@
 /* COMMENTS TABLE */
 
-#comments {
+#comments_list {
 	width:250px;
 	float: right;
-	margin: 40px 20px 10px;
+	padding: 0px;
+	margin: 0px 20px 10px 0px;
 } 
+
+#comments_list_show {
+	width:250px;
+	float: right;
+	padding: 0px;
+	margin: 40px 20px 10px 0px;
+} 
+
 
 #comments li#comment_cell {
 	background-color: #bdf6ff;
@@ -16,8 +25,8 @@
 	background-image: linear-gradient(top, rgb(189, 246, 255), rgb(179, 233, 242));
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bdf6ff', EndColorStr='#b3e9f2');	
 	border-radius: 5px;
-	padding: 4px;
 	margin-bottom: 5px;
+	padding: 4px;
 }
 .comment_workout {
 	font-size: 11px;
@@ -37,7 +46,8 @@
 .comment_user {
 	color: #4d4a4a;
 	text-align: right;
-	padding: 0 5px 5px 0;
-	font-size: 12px; 
+	font-size: 12px;
+	padding-right: 2px;
+	
 }
 

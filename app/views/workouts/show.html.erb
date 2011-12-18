@@ -1,16 +1,37 @@
-<div id="title">
-  <h1>Workout for <%= @workout.date.strftime("%A, %b %d") %></h1>
-</div>
-  
 <div id="workout_show">
-  <p><strong>Name:</strong> <%= @workout.name %></p>
-  <p><strong>Description:</strong> <%= @workout.description %></p>
-  <p><strong>Miles:</strong> <%= @workout.miles %></p>
-  <p><strong>Duration:</strong><%= @workout.duration %></p>
-  <p><strong>RPE:</strong> <%= @workout.RPE %></p>
 
-  <p><strong>Complete?</strong> <%= @workout.complete %></p>
+  <div id="title">
+    Workout for <%= @workout.date.strftime("%A, %b %d") %>
+  </div>
+  
+  <div id="workout_show">
+    <p><strong>Name:</strong> <%= @workout.name %></p>
+    <p><strong>Description:</strong> <%= @workout.description %></p>
+    <p><strong>Miles:</strong> <%= @workout.miles %></p>
+    <p><strong>Duration:</strong><%= @workout.duration %></p>
+    <p><strong>RPE:</strong> <%= @workout.RPE %></p>
 
-  <p class="edit_workout"><%= link_to "Edit", edit_workout_url(@workout) %> | <%= link_to "Delete", workout_url(@workout), method: :delete, confirm: "Are you sure?" %></p>
-  <!-- (:false => "No", :true => "Yes") -->
+    <p>
+      <strong>Complete?</strong>
+      <%= form_for(@workout) do |f| %> 
+        <%= f.check_box :complete %>
+        <%= f.submit "Update" %>
+      <% end %>
+    </p>
+
+    <p class="edit_workout"><%= link_to "Edit", edit_workout_url(@workout) %> | <%= link_to "Delete", workout_url(@workout), method: :delete, confirm: "Are you sure?" %></p>
+    <!-- (:false => "No", :true => "Yes") -->
+  </div>
 </div>
+
+<ul id="comments_list_show">
+  <% @comments.each do |comment| %>
+    <div id="comments">
+      <li id="comment_cell">
+          <span class="comment_workout"><%= link_to "#{comment.workout.date.strftime("%m/%e")} workout", workout_url(comment.workout) %>:</span><br /> 
+          <span class="comment_note"><%= comment.note %></span><br /> 
+          <div class="comment_user">-<%= comment.user.first_name %></div>
+        </li>
+    </div>
+  <% end %>
+</ul>

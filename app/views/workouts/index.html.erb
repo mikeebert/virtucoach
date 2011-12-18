@@ -1,32 +1,44 @@
-<div id=new_workout_link>
-  <%= link_to "Add New Workout", new_workout_url %>
+<div id = "navigation_links">
+  <div id="view_link">
+    <ul>
+      <li id="calendar_link"><%= link_to "Calendar", "#" %></li>
+      <li id="list_link"><%= link_to "List", "#" %></li>    
+    </ul>
+  </div>
+  
+  <div id="month">
+    <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
+    <%=h @date.strftime("%B %Y") %>
+    <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
+  </div>
+  
+  <div id="new_workout_link">
+    <%= link_to "Add New Workout", new_workout_url %>
+  </div>
+  <div class="clear"></div>
 </div>
 
-
+<div class="clear"></div>
 
 <div id="workout_table">
-  <!-- <%= render :partial => 'workout_list' %> -->
-
+  <div id="list">
+    <%= render :partial => 'workout_list' %>
+  </div>
   <div id="calendar">
-    <%= calendar_for(@workouts) do |t| %>
-      <%= t.head('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
-      <%= t.day do |day, workouts| %>
-        <%= day.day %>
-        <% workouts.each do |workout| %>
-          <p class="name"><%= h(link_to workout.name, workout_url(workout)) %></p>
-        <% end %>
-      <% end %>
-    <% end %>
+    <%= render :partial => 'calendar' %>
   </div>
 </div>
 
-  <ul id="comments">
-    <% @comments.each do |comment| %>
+
+<ul id="comments_list">
+  <% @comments.each do |comment| %>
+    <div id="comments">
       <li id="comment_cell">
           <span class="comment_workout"><%= link_to "#{comment.workout.date.strftime("%m/%e")} workout", workout_url(comment.workout) %>:</span><br /> 
-          <p class="comment_note"><%= comment.note %></span> 
-          <p class="comment_user">-<%= comment.user.first_name %></span>
+          <span class="comment_note"><%= comment.note %></span><br /> 
+          <div class="comment_user">-<%= comment.user.first_name %></div>
         </li>
-    <% end %>
-  </ul>
+    </div>
+  <% end %>
+</ul>
 

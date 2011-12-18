@@ -7,3 +7,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  
+  $("#list_link").click(function(event){
+    $("#list").show();
+    $('#calendar').hide();
+  })
+  
+  $("#calendar_link"  ).click(function(event){
+    $("#calendar").show();
+    $("#list").hide();
+  })
+  
+})
