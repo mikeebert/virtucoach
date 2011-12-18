@@ -2,8 +2,8 @@
 #header {
 	width: 950px;
 	padding: 10px 5px 0px 5px;
-  border-bottom: solid 2px;
-  height: 50px;
+  border-bottom: solid 1px gray;
+  height: 55px;
   background-color: #ededed;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(237, 237, 237)), to(rgb(214, 214, 214)));
   background-image: -webkit-linear-gradient(top, rgb(237, 237, 237), rgb(214, 214, 214));
@@ -26,19 +26,13 @@
 }
 
 #name {
-	text-align: bottom;
-	
-	h1 {
-  font-size: 32px;
-  }
-  
-  a{
-  	text-decoration: none;
-  	font-weight: bold;
-  }
-  a:hover{
-  	color: gray;
-  }
+	margin-left: 20px;
+	margin-bottom: 5px;	
+}
+
+#name a{
+	text-decoration: none;
+	margin-bottom: 20px;
 }
 
 #menubar {
@@ -49,43 +43,6 @@
 		float: left;
 		padding-left: 5px;
 	}
-}
-
-/* HOMEPAGE */
-
-#race_photo {
-	margin: 10px 20px;
-}
-
-
-/* NEW USER HOMEPAGE FORM */
-
-#new_user_form {
-	width: 340px;
-	margin-top: 5px;
-	margin-right: 40px;
-	padding: 10px 20px ;
-	background-color: #efefef;
-	border-radius: 5px;
-	float: right;
-	li {
-		font-size: 12px;
-	  text-align: right;
-		decoration:none;
-		margin-right: 10px;
-		line-height: 18px;
-	}
-	h2 {
-		text-align: center;	
-		line-height: 30px;
-		font-weight: bold;
-	}
-	
-}
-
-#new_account {
-	text-align: center;
-	padding-top: 10px;
 }
 
 /* USER SHOW */

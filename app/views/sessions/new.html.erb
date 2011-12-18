@@ -1,16 +1,19 @@
-<div>
-  <p>VirtuCoach is an easy to use collaborative training calendar for athletes.</p>
+<div id="homepage">
 
-
-  <div id="race_photo">
-    <%= image_tag("race.jpg") %>
+  <div id="homepage_content">
+    <h1>VirtuCoach is an easy to use collaborative training calendar for athletes.</h1> 
+    
+    <p>
+      You can add, edit and delete your workouts, view your teammates' calendars, grant your teammates viewing access to your workout calendar, provide coaches with editing access, comment on your own and teammates' workouts and message your teammates.
+    </p>
+    <div id="race_photo">
+      <%= image_tag("race.jpg") %>
+    </div>
   </div>
-
+  
   <div id ="new_user_form">
-    <h2>Create an Account</h2>
+    <p class="form_title">Create an Account</p>
     <%= render "users/homeform" %>
   </div>
-
+  
 </div>
-
-<div id="clear"></div>

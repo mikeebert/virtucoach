@@ -40,3 +40,17 @@
   
   <p><%= link_to "Edit My Account or Change My Password", edit_user_url(@user) %></p>
 </div>
+
+<div id="teammates">
+  <p><strong>Teammates (calendars I can view):</strong></p>
+  <% @user.teammates.each do |teammate| %>
+    <li><%= teammate.owner.first_name %> <%= teammate.owner.last_name %></li>
+  <% end %>
+</div>
+
+<div id="viewers">
+  <p><strong>People I've granted view access to:</strong></p>
+  <% @user.viewers.each do |viewer| %>
+    <li><%= viewer.guest.first_name %> <%= viewer.guest.last_name %></li>
+  <% end %>
+</div>

@@ -8,6 +8,7 @@
 */
 
 @import 'styles';
+@import 'sessions';
 @import 'workouts';
 @import 'comments';
 
@@ -37,7 +38,7 @@ body {
   border-left: 1px solid #bbb;
   border-right: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
-  height: 725px;
+/*  height: 725px;*/
 
 }
 
@@ -59,14 +60,6 @@ em {
 
 p {
 	padding: 7px 0;
-}
-
-img {
-	border: 2px solid #ccc;
-	padding: 2px;
-	margin: 5px;
-	float: left;
-	border-radius: 5px;
 }
 
 strong {
