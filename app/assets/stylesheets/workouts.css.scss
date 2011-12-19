@@ -1,10 +1,29 @@
+/* Teammates lists*/
+#teammates {
+	margin: 2px 2px;
+	ul {
+		float: left;
+	}
+	li {
+		float: left;
+		padding: 0 2px;
+		a {
+			text-decoration: none;
+			font-size: 12px;
+		}
+	}
+}
+
 /* View Links */
 
 #navigation_links {
-	width: 660px;
+	width: 655px;
 	margin-left: 17px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	a {
+		text-decoration: none;
+	}
 }
 
 #view_link {
@@ -51,7 +70,7 @@
 
 #calendar th {
   background: #DDD;
-  color: #666;
+  color: #444;
   text-align: center;
   width: 14.2857142857143%;
 }
@@ -61,12 +80,8 @@
   color: black;
   height: 105px;
   vertical-align: top;
-  font-size: 12px;
+  font-size: 14px;
   padding-left: 2px;
-}
-
-#calendar a {
-	text-decoration: none;	
 }
 
 #calendar .notmonth {
@@ -91,7 +106,16 @@
 }
 
 #calendar td p.name {
-	margin: 1px ;
+	a {
+		margin: 1px ;
+		font-size: 13px;
+		font-weight: bold;
+		text-decoration: none;
+		color: black;
+	}
+	a:hover {
+		color: gray;
+	}	
 }
 
 #calendar ul {
@@ -110,9 +134,28 @@
 
 #comment_link {
 	text-align: right;
-	font-style: italic;
+	font-weight: bold;
+	margin-top: 2px;
+	a {
 	font-size: 10px;
-	bottom: 1px;
+	text-decoration: none;
+	color: #4f7bf8;
+	}
+	a:hover {
+		color: black;
+	}
+}
+
+#calendar div.description {
+	font-size: smaller;
+	font-style: italic;
+	a {
+		text-decoration: none;
+		color: #333;	
+	}
+	a:hover {
+		color: gray;
+	}
 }
 
 /* WORKOUT LIST TABLE */
@@ -143,6 +186,10 @@
 	tr {
 		height: 20px;
 	}
+	tr:nth-child(even) {
+		background-color: #f8f8f8;
+	}
+	
 	tr.today {
 		background-color: #dcf1fc;
 	}

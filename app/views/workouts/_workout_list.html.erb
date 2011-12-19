@@ -17,7 +17,7 @@
       <td class="description"><%= truncate(workout.description, length: 60, omission: "...") %></td>
       <td class="data"><%= workout.duration %></td>
       <td class="data"><%= workout.RPE %></td>
-      <td class="comment"><%= link_to "comment", new_comment_url(:workout_id => workout.id), method: :get, id: "comment_btn" %></td>
+      <td class="comment"><%= link_to "note", new_comment_url(:workout_id => workout.id), method: :get, id: "comment_btn" %></td>
     </tr> 
   <% end %>
 

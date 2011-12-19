@@ -6,7 +6,7 @@ class Workout < ActiveRecord::Base
                    length: {maximum:30}
   validates :description, length: {maximum:140}
   
-  validates :date, presence: true
+  # validates :date, presence: true
 
   has_many :comments, dependent: :destroy
 

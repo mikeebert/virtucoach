@@ -12,8 +12,15 @@ class WorkoutsController < ApplicationController
   def index
     @date = params[:month] ? Date.parse(params[:month]) : Date.today
     date = @date  
-    @workouts = current_user.workouts.selected_month(date)
-    @workouts_cal = current_user.workouts
+    
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+    else
+      @user = current_user
+    end
+    
+    @workouts = @user.workouts.selected_month(date)
+    @workouts_cal = @user.workouts
     @comments = current_user.comments.order("created_at desc").limit(10)
   end
   

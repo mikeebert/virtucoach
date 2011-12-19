@@ -1,8 +1,24 @@
+<% if current_user.teammates.present? %>
+  <div id="teammates">
+    <ul>
+      <li><%= link_to "Me", root_url %></li>
+      <li>|</li>
+      <% current_user.teammates.each do |teammate| %>
+        <li><%= link_to "#{teammate.owner.first_name} #{teammate.owner.last_name.slice!(0)}.", workouts_url(user_id: teammate.owner.id) %></li>
+        <li>|</li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
 <div id = "navigation_links">
   <div id="view_link">
     <ul>
-      <li id="calendar_link"><%= link_to "Calendar", "#" %></li>
-      <li id="list_link"><%= link_to "List", "#" %></li>    
+      <li id="calendar_link"><%= link_to "Calendar", "#calendar" %></li>
+      <li>|</li>
+      <li id="list_link"><%= link_to "List", "#list" %></li>    
     </ul>
   </div>
   
