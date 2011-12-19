@@ -1,6 +1,8 @@
 /* Teammates lists*/
 #teammates {
-	margin: 2px 2px;
+	margin: 5px 2px 2px 5px;
+	font-size: 12px;
+	font-weight: bold;
 	ul {
 		float: left;
 	}
@@ -37,6 +39,7 @@
 #month {
 	width: 460px;
 	text-align:center;
+	font-weight: bold;
 	float: left;
 	a {
 		text-decoration: none;

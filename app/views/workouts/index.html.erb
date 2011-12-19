@@ -1,6 +1,7 @@
 <% if current_user.teammates.present? %>
   <div id="teammates">
     <ul>
+      <li>View: </li>
       <li><%= link_to "Me", root_url %></li>
       <li>|</li>
       <% current_user.teammates.each do |teammate| %>
@@ -24,7 +25,7 @@
   
   <div id="month">
     <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
-    <%=h @date.strftime("%B %Y") %>
+    <%= "#{@user.first_name} #{@user.last_name} - " %>  <%=h @date.strftime("%B %Y") %>
     <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
   </div>
   

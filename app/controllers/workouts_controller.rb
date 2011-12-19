@@ -18,7 +18,7 @@ class WorkoutsController < ApplicationController
     else
       @user = current_user
     end
-    
+
     @workouts = @user.workouts.selected_month(date)
     @workouts_cal = @user.workouts
     @comments = current_user.comments.order("created_at desc").limit(10)
