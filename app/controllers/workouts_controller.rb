@@ -13,12 +13,18 @@ class WorkoutsController < ApplicationController
     @date = params[:month] ? Date.parse(params[:month]) : Date.today
     date = @date  
     
-    if params[:user_id]
-      @user = User.find(params[:user_id])
+    if params[:user_id].present?
+      teammate = current_user.teammates.find_by_owner_id(params[:user_id])
+      if teammate.blank?
+        redirect_to root_url, :notice => "No way"
+        return
+      end
+      @user = teammate.owner
     else
       @user = current_user
     end
 
+    logger.debug "Will show calendar for #{@user.inspect}"
     @workouts = @user.workouts.selected_month(date)
     @workouts_cal = @user.workouts
     @comments = current_user.comments.order("created_at desc").limit(10)

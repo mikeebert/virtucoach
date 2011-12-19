@@ -1,14 +1,7 @@
-<% if current_user.teammates.present? %>
+<% if current_user.teammates.any? %>
   <div id="teammates">
-    <ul>
-      <li>View: </li>
-      <li><%= link_to "Me", root_url %></li>
-      <li>|</li>
-      <% current_user.teammates.each do |teammate| %>
-        <li><%= link_to "#{teammate.owner.first_name} #{teammate.owner.last_name.slice!(0)}.", workouts_url(user_id: teammate.owner.id) %></li>
-        <li>|</li>
-      <% end %>
-    </ul>
+    <%= link_to "Me", workouts_url %>
+    View: <%= form_tag workouts_url, :method => :get, :id => "teammate_selector" do %> <%= select_tag :user_id, options_from_collection_for_select(current_user.teammates, :owner_id, :display_name, params[:user_id]) %> <% end %>
   </div>
 <% end %>
 
@@ -23,10 +16,11 @@
     </ul>
   </div>
   
-  <div id="month">
-    <%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
-    <%= "#{@user.first_name} #{@user.last_name} - " %>  <%=h @date.strftime("%B %Y") %>
-    <%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
+  <div id="month_title">
+    <%= link_to "< ", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
+    <!-- <%= "#{@user.first_name} #{@user.last_name} - " %>   -->
+    <%=h @date.strftime("%B %Y") %>
+    <%= link_to " >", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
   </div>
   
   <div id="new_workout_link">

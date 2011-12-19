@@ -1,19 +1,8 @@
 /* Teammates lists*/
 #teammates {
-	margin: 5px 2px 2px 5px;
+	margin: 5px 2px 2px 15px;
 	font-size: 12px;
 	font-weight: bold;
-	ul {
-		float: left;
-	}
-	li {
-		float: left;
-		padding: 0 2px;
-		a {
-			text-decoration: none;
-			font-size: 12px;
-		}
-	}
 }
 
 /* View Links */
@@ -36,13 +25,16 @@
 	}
 }
 
-#month {
+#month_title {
 	width: 460px;
 	text-align:center;
 	font-weight: bold;
 	float: left;
 	a {
 		text-decoration: none;
+		color: gray;
+		padding-left: 3px;
+		padding-right: 5px;
 	}
 }
 
@@ -59,7 +51,7 @@
 #calendar table {
   border-collapse: collapse;
   width: 660px;
-  margin-left: 5px;
+/*  margin-left: 5px;*/
   margin-bottom: 20px;
 }
 
@@ -81,7 +73,7 @@
 #calendar td {
   background: #FFF;
   color: black;
-  height: 105px;
+  height: 110px;
   vertical-align: top;
   font-size: 14px;
   padding-left: 2px;
@@ -169,19 +161,20 @@
 
 #workout_table {
 	float: left;
-	margin-left: 10px;
+	margin-left: 15px;
 }
 
 #workouts_list {
 	width: 650px;
 	font-size: 12px;
-	margin: 0px 10px 10px 0px;
+/*	margin: 0px 10px 10px 0px;*/
 	th {
 		padding-left: 2px;
 		text-align: left;
 		font-weight: bold;
 		line-height: 16px;
 		vertical-align: bottom;
+		background-color: #dddddd ;
 	}
 	.data_header {
 		text-align: center;
@@ -189,7 +182,7 @@
 	tr {
 		height: 20px;
 	}
-	tr:nth-child(even) {
+	tr:nth-child(odd) {
 		background-color: #f8f8f8;
 	}
 	
@@ -197,6 +190,12 @@
 		background-color: #dcf1fc;
 	}
 }
+
+.mins {
+	font-weight: normal;
+	font-style: italic;
+}
+
 
 #workouts_list td {
 		padding: 2px 1px 3px 1px;

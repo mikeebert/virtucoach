@@ -20,4 +20,9 @@ $(function() {
     $("#list").hide();
   })
   
+  $("#user_id").change(function(event){
+    event.preventDefault();
+     $("#teammate_selector").submit();
+  });
+  
 })
