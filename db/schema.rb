@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218181540) do
+ActiveRecord::Schema.define(:version => 20111220174404) do
 
   create_table "comments", :force => true do |t|
     t.string   "note"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20111218181540) do
   create_table "relationships", :force => true do |t|
     t.integer  "owner_id"
     t.integer  "guest_id"
-    t.boolean  "coach",      :default => false
+    t.boolean  "edit",       :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

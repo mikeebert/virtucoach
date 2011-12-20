@@ -1,7 +1,7 @@
 <div id="workout_show">
 
   <div id="title">
-    Workout for <%= @workout.date.strftime("%A, %b %d") %>
+    <%= "#{@workout.user.first_name} #{@workout.user.last_name}" %> - <%= @workout.date.strftime("%A, %b %d") %>
   </div>
   
   <div id="workout_show">
@@ -10,17 +10,21 @@
     <p><strong>Miles:</strong> <%= @workout.miles %></p>
     <p><strong>Duration:</strong><%= @workout.duration %></p>
     <p><strong>RPE:</strong> <%= @workout.RPE %></p>
-
-    <p>
-      <strong>Complete?</strong>
-      <%= form_for(@workout) do |f| %> 
-        <%= f.check_box :complete %>
-        <%= f.submit "Update" %>
-      <% end %>
-    </p>
-
+    
+    <% if @workout.user == current_user %>
+      <p>
+        <strong>Complete?</strong>
+        <%= form_for(@workout) do |f| %> 
+          <%= f.check_box :complete %>
+          <%= f.submit "Update" %>
+        <% end %>
+      </p>
+    <% end %>
+    
+    <% if @workout.user == current_user || @workout.user == current_user.teammate.coach %>
     <p class="edit_workout"><%= link_to "Edit", edit_workout_url(@workout) %> | <%= link_to "Delete", workout_url(@workout), method: :delete, confirm: "Are you sure?" %></p>
-    <!-- (:false => "No", :true => "Yes") -->
+    <% end %>
+
   </div>
 </div>
 

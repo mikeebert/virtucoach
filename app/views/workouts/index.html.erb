@@ -1,31 +1,29 @@
-<% if current_user.teammates.any? %>
-  <div id="teammates">
-    <%= link_to "Me", workouts_url %>
-    View: <%= form_tag workouts_url, :method => :get, :id => "teammate_selector" do %> <%= select_tag :user_id, options_from_collection_for_select(current_user.teammates, :owner_id, :display_name, params[:user_id]) %> <% end %>
-  </div>
-<% end %>
-
-<div class="clear"></div>
-
 <div id = "navigation_links">
-  <div id="view_link">
-    <ul>
-      <li id="calendar_link"><%= link_to "Calendar", "#calendar" %></li>
-      <li>|</li>
-      <li id="list_link"><%= link_to "List", "#list" %></li>    
-    </ul>
-  </div>
-  
+
+  <% if current_user.teammates.any? %>
+    <div id="teammates">
+        <span class="teammate_select_box">
+          <%= form_tag workouts_url, :method => :get, :id => "teammate_selector" do %> 
+          <%= select_tag :user_id, options_from_collection_for_select(current_user.teammates, :owner_id, :display_name, params[:user_id]), prompt: 'My Calendar' %> 
+          <% end %>
+        </span>
+    </div>
+  <% end %>
+
   <div id="month_title">
     <%= link_to "< ", :month => (@date.beginning_of_month-1).strftime("%Y-%m-%d") %>
     <!-- <%= "#{@user.first_name} #{@user.last_name} - " %>   -->
     <%=h @date.strftime("%B %Y") %>
     <%= link_to " >", :month => (@date.end_of_month+1).strftime("%Y-%m-%d") %>
   </div>
-  
-  <div id="new_workout_link">
-    <%= link_to "Add New Workout", new_workout_url %>
-  </div>
+    
+  <ul id="view_link">
+    <li id="calendar_link"><%= link_to "Calendar", "#calendar" %></li>
+    <li class="separator">|</li>
+    <li id="list_link"><%= link_to "List", "#list" %></li>   
+    <li class="separator">|</li>
+    <li><%= link_to "Add Workout", new_workout_url %> </li>
+  </ul>
   <div class="clear"></div>
 </div>
 
