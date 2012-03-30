@@ -1,0 +1,13 @@
+<%= calendar_for @workouts_cal, :year => @date.year, :month => @date.month do |t| %>
+  <%= t.head('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') %>
+  <%= t.day do |day, workouts_cal| %>
+    <%= day.day %>
+    <% workouts_cal.each do |workout| %>
+      <p class="name"><%= h(link_to workout.name, workout_url(workout, :user_id => @user.id)) %></p>
+      <div class="description"><%= link_to truncate(workout.description, length: 30, omission:"..."), workout_url(workout) %></div>
+      <% if workout.comments.present? %>
+        <div id="comment_link"><%= link_to "note", new_comment_url(:workout_id => workout.id), method: :get, id: "comment_btn" %></div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

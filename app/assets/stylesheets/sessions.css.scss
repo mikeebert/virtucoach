@@ -1,0 +1,59 @@
+/* HOMEPAGE */
+
+#homepage {
+	margin: 20px;
+	height: 400px;
+}
+
+#homepage_content {
+	width: 550px;
+	float: left;
+	font-size:14px;
+	h2 {
+		font-size: 16px;
+	}
+}
+
+#race_photo {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	img {
+		border: 1px solid #ccc;
+		padding: 2px;
+		margin: 5px;
+	}
+	
+}
+
+
+/* NEW USER HOMEPAGE FORM */
+
+#new_user_form {
+	width: 300px;
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-top: 30px;
+	padding: 10px 15px 10px 10px;
+	background-color: #efefef;
+	border-radius: 5px;
+	float: right;
+	li {
+		font-size: 12px;
+	  text-align: right;
+		decoration:none;
+/*		margin-right: 10px;*/
+		line-height: 18px;
+	}
+	p.form_title {
+		text-align: center;	
+		line-height: 20px;
+		font-weight: bold;
+	}
+}
+
+#new_account {
+	text-align: center;
+	padding-top: 10px;
+}
+
